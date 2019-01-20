@@ -7,6 +7,7 @@
   <!--font-logo--><link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"/>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
   <header>
@@ -278,11 +279,12 @@
           <p>Nunc ornare hendrerit mauris, quis aliquet sapien congue eu. Vestibulum rutrum maximus dolor, in pellentesque dui rutrum eget.  </p>
         </section>
         <div id="form-div">
+        	<div id="app"><span>Hello {{ name }}!</span>
           <form action="#" id="form">
             <div id="name-email-inputs">
               <div class="single-input">
                 <label for="name">Your name</label>
-                <input type="text" id="name" name="name">
+                <input type="text" id="name" name="name" v-model="name">
               </div>
               <div class="single-input">
                 <label for="email">Your email</label>
@@ -296,7 +298,7 @@
               </div>
               <input type="submit" value="SEND MESSAGE" id="submit-btn">
             </div>
-          </form>
+          </form></div>
         </div>
       </div>
     </section>
@@ -315,5 +317,7 @@
       </div>
     </div>
   </footer>
+  <script src="main.js"></script>
+  
 </body>
 </html>
