@@ -1,42 +1,53 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>EasyMarket</title>
+	<title>MODEST</title>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <!--font-logo--><link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"/>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
   <header>
-      <nav>
+      <nav v-bind:style="{'position':position}">
+        <button v-on:click="changePosition" id="nav-btn" >{{ showWords }}</button>
         <div class="container" id="navbar">
         <div id="logo">
-          M<u style="font-family: 'Coiny', cursive; font-size:0.9em;">O</u>D<u style="font-family: 'Coiny', cursive; ">E</u>ST
+          M<u style="font-family: 'Coiny', cursive; font-size:0.9em;">O</u>DEST
         </div>
+        
         <div id="nav-links">
           <a href="#" style="border:2px solid rgba(173,216,230 ,1); color:rgba(173,216,230 ,1);">Home</a>
           <a href="#we-are-modest">About</a>
-          <a href="#">Work</a>
-          <a href="#">Team</a>
-          <a href="#">Services</a>
-          <a href="#">Features</a>
-          <a href="#">Contact</a>
+          <a href="#second-section">Team</a>
+          <a href="#works-section">Work</a>
+          <a href="#what-we-do-section">Services</a>
+          <a href="#features-section">Features</a>
+          <a href="#contact-section">Contact</a>
         </div>
         </div>
       </nav>
-    <div class="container">
-      <section id="welcome-section">
-        <h1 id="welcome-h1">Welcome to our marketplace</h1>
-        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris suscipit ornare lobortis. Cras finibus sit amet feugiat. Etiam cursus malesuada lacus vel pretium...</h4>
-        <div id="welcome-buttons">
-          <a href="#">view more</a>
-          <a href="#">video tour</a>
-        </div>
-      </section>
-    </div>
+      <image-slider id="background-image-section">
+      <div id="btn-section">
+      <button @click="prev" class="image-btn"><</button> 
+       <div class="container">
+       <section id="welcome-section">
+       <h1 id="welcome-h1">Welcome to our marketplace</h1>
+                                                      <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris suscipit ornare lobortis. Cras finibus sit amet feugiat. Etiam cursus malesuada lacus vel pretium...</h4>
+                                                      <div id="welcome-buttons">
+                                                        <a href="#">view more</a>
+                                                        <a href="#">video tour</a>
+  </div> </section></div>
+        <button @click="next" class="image-btn">></button></div>
+    <transition-group name='fade' tag='div'>
+      <div v-for="number in [currentNumber]" :key='number'>
+        <img id="background-image-cover" :src="currentImage" v-on:mouseover="stopRotation" v-on:mouseout="startRotation"/>
+         </div>
+         </transition-group>
+       </image-slider>    
+      
   </header>
   <main>
     <section id="we-are-modest">
@@ -267,7 +278,7 @@
         </section>
       </div>
     </section>
-    <section>
+    <section id="contact-section">
       <div class="container">
         <h1 class="section-h1">stay in touch</h1>
       </div>
@@ -279,7 +290,7 @@
           <p>Nunc ornare hendrerit mauris, quis aliquet sapien congue eu. Vestibulum rutrum maximus dolor, in pellentesque dui rutrum eget.  </p>
         </section>
         <div id="form-div">
-        	<div id="app"><span>Hello {{ name }}!</span>
+          <div id="app"><span v-bind:title="name">Hello {{ name }}!</span>
           <form action="#" id="form">
             <div id="name-email-inputs">
               <div class="single-input">
@@ -296,7 +307,7 @@
                 <label for="textarea">Your message</label>
                 <textarea form="form" name="textarea" id="textarea" rows="6"></textarea>
               </div>
-              <input type="submit" value="SEND MESSAGE" id="submit-btn">
+              <input type="submit" value="SEND MESSAGE" id="submit-btn" v-on:click.once="showsent=!showsent"><span v-show="showsent">{{ sent }}</span>
             </div>
           </form></div>
         </div>
@@ -318,6 +329,5 @@
     </div>
   </footer>
   <script src="main.js"></script>
-  
 </body>
 </html>
