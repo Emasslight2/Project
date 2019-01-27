@@ -55,6 +55,7 @@ nav{
   border-left:2px solid rgba(173,216,230,0.3);
   border-right:2px solid rgba(173,216,230,0.3);
   font-weight:bold;
+  transition:400ms;
 }
 #nav-links a:hover{
   border:2px solid rgba(255,255,255 ,1)
@@ -64,6 +65,7 @@ nav{
   color:white;
   font-weight:bold;
   font-size:2em;
+  transition:500ms;
 }
 #logo:hover{
   color:rgba(173,216,230 ,1);
@@ -88,8 +90,9 @@ nav{
   text-transform:uppercase;
   font-weight:bold;
   border:2px solid white;
-  border-radius:0.5em;;
+  border-radius:0.5em;
   padding:0.8em 1.8em;
+transition:300ms;
 }
 #welcome-buttons a:hover{
   background-color:#23B7A4;
@@ -181,6 +184,10 @@ height:3.94em;
 background:#C8CDD0;
 border:1px solid rgba(0,0,0,0);
 border-radius:5%;
+transition:500ms;
+}
+#social-links-section .social-link:hover{
+margin:0 1em 0 1em;
 }
 .social-link img{
 max-width:50%;
@@ -189,18 +196,22 @@ margin:0.86em;
 }
 .social-link:nth-child(1):hover{
 background:#3B579D;
+transform:scale(1.1);
 }
 .social-link:nth-child(2):hover{
 background:#28A9E2;
+transform:scale(1.1);
 }
 .social-link:nth-child(3) img{
 margin-top:1em;
 }
 .social-link:nth-child(3):hover{
 background:#DC4A38;
+transform:scale(1.1);
 }
 .social-link:nth-child(4):hover{
 background:#0274B3;
+transform:scale(1.1);
 }
 .social-link:nth-child(5) img{
 margin-top:1.5em;
@@ -208,6 +219,7 @@ margin-top:1.5em;
 .social-link:nth-child(5):hover{
 background:white;
 border:1px solid rgba(0,0,0,1);
+transform:scale(1.1);
 }
 #first-section-aside{
 margin:0;
@@ -364,12 +376,15 @@ display:flex;
 flex-direction:column;
 justify-content:flex-end;
 height:18em;
+
 }
 .single-work:hover .works-h1{
 opacity:1;
+transition:500ms;
 }
 .single-work:hover .works-description{
 opacity:1;
+transition:500ms;
 }
 .works-links{
 text-decoration:none;
@@ -396,6 +411,7 @@ font-weight:bold;
 border:2px solid white;
 border-radius:0.5em;;
 padding:0.8em 1.8em;
+transition:500ms;
 
 }
 #show-me-more-btn a:hover{
