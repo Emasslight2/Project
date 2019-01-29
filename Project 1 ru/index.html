@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MODEST</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!--font-logo--><link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"/>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header>
+      <nav v-bind:style="{'position':position}">
+        <button v-on:click="changePosition" id="nav-btn" >{{ showWords }}</button>
+        <div class="container" id="navbar">
+        <div id="logo">
+          M<u style="font-family: 'Coiny', cursive; font-size:0.9em;">O</u>DEST
+        </div>
+        
+        <div id="nav-links">
+          <a href="#" style="border:2px solid rgba(173,216,230 ,1); color:rgba(173,216,230 ,1);">Главная</a>
+          <a href="#we-are-modest">О нас</a>
+          <a href="#second-section">Команда</a>
+          <a href="#works-section">Работы</a>
+          <a href="#what-we-do-section">Услуги</a>
+          <a href="#features-section">Особенности</a>
+          <a href="#contact-section">Контакты</a>
+        </div>
+        </div>
+      </nav>
+      <image-slider id="background-image-section">
+      <div id="btn-section">
+      <button @click="prev" class="image-btn"><</button> 
+       <div class="container">
+       <section id="welcome-section">
+       <h1 id="welcome-h1">Добро пожаловать к нам</h1>
+                                                      <h4>Ясность нашей позиции очевидна: синтетическое тестирование играет определяющее значение для новых предложений....</h4>
+                                                      <div id="welcome-buttons">
+                                                        <a href="#">Увидеть больше</a>
+                                                        <a href="#">Видео курс</a>
+  </div> </section></div>
+        <button @click="next" class="image-btn">></button></div>
+    <transition-group name='fade' tag='div'>
+      <div v-for="number in [currentNumber]" :key='number'>
+        <img id="background-image-cover" :src="currentImage" v-on:mouseover="stopRotation" v-on:mouseout="startRotation"/>
+         </div>
+         </transition-group>
+       </image-slider>    
+      
+  </header>
+  <main>
+    <section id="we-are-modest">
+      <div class="container">
+        <h1 class="section-h1">Мы вам подходим</h1>
+        <div id="first-section">
+          <article id="first-section-text">
+            <p>Как принято считать, представители современных социальных резервов набирают популярность среди определенных слоев населения, а значит, должны быть ассоциативно распределены по отраслям. Ясность нашей позиции очевидна: синтетическое тестирование играет определяющее значение.</p>
+            <p>Следует отметить, <b>что постоянное информационно-пропагандистское</b>, обеспечение нашей деятельности выявляет срочную потребность своевременного выполнения сверхзадачи.</p>
+            <section id="social-links-section">
+              <a href="#" class="social-link"><img src="https://www.uspca.com/wp-content/uploads/facebook-logo-png-white-i6.png"></a>
+              <a href="#" class="social-link"><img src="http://chittagongit.com/images/twitter-icon-white-png/twitter-icon-white-png-14.jpg"></a>
+              <a href="#" class="social-link"><img src="http://icons-for-free.com/free-icons/png/512/2470527.png"></a>
+              <a href="#" class="social-link"><img src="https://cmbranddeveloper.com/wp-content/uploads/2018/06/media.png"></a>
+              <a href="#" class="social-link"><img src="https://cdn.freebiesupply.com/logos/large/2x/behance-logo-png-transparent.png"></a>
+            </section>
+          </article>
+          <aside id="first-section-aside">
+            <div class="info-icon">01</div>
+            <div class="aside-info-text">
+              <h4 class="info-title">преданность клиентам</h4>
+              <p>Сложно сказать, почему предприниматели в сети интернет, вне зависимости от их уровня.</p>
+            </div>
+            <div class="info-icon">02</div>
+            <div class="aside-info-text">
+              <h4 class="info-title">Работаем тесно с нашими клиентами</h4>
+              <p>И нет сомнений, что стремящиеся вытеснить традиционное производство.</p>
+            </div>
+            <div class="info-icon">03</div>
+            <div class="aside-info-text">
+              <h4 class="info-title">Увеличиваем счастье</h4>
+              <p>Приятно, граждане, наблюдать, как представители современных социальных резервов.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <hr>
+    <section id="second-section">
+      <div class="container">
+        <h1 class="section-h1">Встречайте нашу команду</h1>
+        <div id="second-section-grid">
+          <div class="human-info">
+            <div>
+              <div class="human-info-links">
+              <a href="#" class="social-link"><img src="https://www.uspca.com/wp-content/uploads/facebook-logo-png-white-i6.png"></a>
+              <a href="#" class="social-link"><img src="http://chittagongit.com/images/twitter-icon-white-png/twitter-icon-white-png-14.jpg"></a>
+              <a href="#" class="social-link"><img src="https://cmbranddeveloper.com/wp-content/uploads/2018/06/media.png"></a>
+            </div>
+              <img src="https://blockapps.net/wp-content/uploads/2016/12/woman-headshot-silhouette-grey-hi.png" class="human-photo"></div>
+            <div class="human-text">
+              <h4 class="human-name">глория бромлей</h4>
+              <p class="human-occupation">ГД и основатель</p>
+            </div>
+          </div>
+          <div class="human-info">
+            <div>
+              <div class="human-info-links">
+              <a href="#" class="social-link"><img src="https://www.uspca.com/wp-content/uploads/facebook-logo-png-white-i6.png"></a>
+              <a href="#" class="social-link"><img src="http://chittagongit.com/images/twitter-icon-white-png/twitter-icon-white-png-14.jpg"></a>
+              <a href="#" class="social-link"><img src="https://cmbranddeveloper.com/wp-content/uploads/2018/06/media.png"></a>
+            </div>
+              <img src="http://simpleicon.com/wp-content/uploads/user1.png" class="human-photo">
+            </div>
+            <div class="human-text">
+              <h4 class="human-name">Пол Торрес</h4>
+              <p class="human-occupation">Глава развития</p>
+            </div>
+          </div>
+          <div class="human-info">
+            <div>
+              <div class="human-info-links">
+              <a href="#" class="social-link"><img src="https://www.uspca.com/wp-content/uploads/facebook-logo-png-white-i6.png"></a>
+              <a href="#" class="social-link"><img src="http://chittagongit.com/images/twitter-icon-white-png/twitter-icon-white-png-14.jpg"></a>
+              <a href="#" class="social-link"><img src="https://cmbranddeveloper.com/wp-content/uploads/2018/06/media.png"></a>
+            </div>
+              <img src="https://blockapps.net/wp-content/uploads/2016/12/woman-headshot-silhouette-grey-hi.png" class="human-photo"></div>
+            <div class="human-text">
+              <h4 class="human-name">Джуди Джилетт</h4>
+              <p class="human-occupation">Графический дизайнер</p>
+            </div>
+          </div>
+          <div class="human-info">
+            <div>
+              <div class="human-info-links">
+              <a href="#" class="social-link"><img src="https://www.uspca.com/wp-content/uploads/facebook-logo-png-white-i6.png"></a>
+              <a href="#" class="social-link"><img src="http://chittagongit.com/images/twitter-icon-white-png/twitter-icon-white-png-14.jpg"></a>
+              <a href="#" class="social-link"><img src="https://cmbranddeveloper.com/wp-content/uploads/2018/06/media.png"></a>
+            </div>
+              <img src="http://simpleicon.com/wp-content/uploads/user1.png" class="human-photo">
+            </div>
+            <div class="human-text">
+              <h4 class="human-name">Делорес Рид</h4>
+              <p class="human-occupation">
+Директор по обслуживанию клиентов</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="works-section">
+      <div class="container">
+        <h1 class="section-h1">Любимая работа</h1>
+        <div id="grid-six-works">
+          <div id="work-1">
+            <a href="#" class="works-links"><div class="opasier">
+            <div class="single-work">
+              <h1 class="works-h1">+</h1>
+              <div class="works-description">
+                <h4 class="human-name">принципы партнерства</h4>
+              </div>
+            </div></div></a>
+          </div>
+          <div id="work-2">
+            <a href="#" class="works-links"><div class="opasier">
+            <div class="single-work">
+              <h1 class="works-h1">+</h1>
+              <div class="works-description">
+                <h4 class="human-name">принципы партнерства</h4>
+              </div>
+            </div></div></a>
+          </div>
+          <div id="work-3">
+            <a href="#" class="works-links"><div class="opasier">
+            <div class="single-work">
+              <h1 class="works-h1">+</h1>
+              <div class="works-description">
+                <h4 class="human-name">принципы партнерства</h4>
+              </div>
+            </div></div></a>
+          </div>
+          <div id="work-4">
+            <a href="#" class="works-links"><div class="opasier">
+            <div class="single-work">
+              <h1 class="works-h1">+</h1>
+              <div class="works-description">
+                <h4 class="human-name">принципы партнерства</h4>
+              </div>
+            </div></div></a>
+          </div>
+          <div id="work-5">
+            <a href="#" class="works-links"><div class="opasier">
+            <div class="single-work">
+              <h1 class="works-h1">+</h1>
+              <div class="works-description">
+                <h4 class="human-name">принципы партнерства</h4>
+              </div>
+            </div></div></a>
+          </div>
+          <div id="work-6">
+            <a href="#" class="works-links"><div class="opasier">
+            <div class="single-work">
+              <h1 class="works-h1">+</h1>
+              <div class="works-description">
+                <h4 class="human-name">принципы партнерства</h4>
+              </div>
+            </div></div></a>
+          </div>
+        </div>
+        <div id="show-me-more-btn"><a href="#">Показать больше</a></div>
+      </div>
+    </section>
+    <section id="what-we-do-section">
+      <div class="container">
+        <h1 class="section-h1">Чем мы занимаемся</h1>
+        <section id="what-we-do-grid">
+          <div class="grid-cell">
+            <i class="fas fa-cogs"></i>
+            <h4 class="grid-cell-title">Простая настройка</h4>
+            <p class="grid-cell-description">Прежде всего, экономическая повестка сегодняшнего дня однозначно определяет каждого участника.</p>
+          </div>
+          <div class="grid-cell">
+            <i class="fas fa-pencil-alt"></i>
+            <h4 class="grid-cell-title">Идеальный дизайн</h4>
+            <p class="grid-cell-description">Прежде всего, экономическая повестка сегодняшнего дня однозначно определяет каждого участника.</p>
+          </div>
+          <div class="grid-cell">
+            <i class="fas fa-mobile"></i>
+            <h4 class="grid-cell-title">
+Отзывчивый дисплей</h4>
+            <p class="grid-cell-description">Прежде всего, экономическая повестка сегодняшнего дня однозначно определяет каждого участника.</p>
+          </div>
+          <div class="grid-cell">
+            <i class="far fa-clock"></i>
+            <h4 class="grid-cell-title">Поддержка 24/7</h4>
+            <p class="grid-cell-description">Прежде всего, экономическая повестка сегодняшнего дня однозначно определяет каждого участника.</p>
+          </div>
+          <div class="grid-cell">
+            <i class="fas fa-cogs"></i>
+            <h4 class="grid-cell-title">Простая настройка</h4>
+            <p class="grid-cell-description">Прежде всего, экономическая повестка сегодняшнего дня однозначно определяет каждого участника.</p>
+          </div>
+          <div class="grid-cell">
+            <i class="fas fa-pencil-alt"></i>
+            <h4 class="grid-cell-title">Идеальный дизайн</h4>
+            <p class="grid-cell-description">Прежде всего, экономическая повестка сегодняшнего дня однозначно определяет каждого участника.</p>
+          </div>
+          <div class="grid-cell">
+            <i class="fas fa-mobile"></i>
+            <h4 class="grid-cell-title">Отзывчивый дисплей</h4>
+            <p class="grid-cell-description">Прежде всего, экономическая повестка сегодняшнего дня однозначно определяет каждого участника.</p>
+          </div>
+          <div class="grid-cell">
+            <i class="far fa-clock"></i>
+            <h4 class="grid-cell-title">Поддержка 24/7</h4>
+            <p class="grid-cell-description">Прежде всего, экономическая повестка сегодняшнего дня однозначно определяет каждого участника.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+    <section id="features-section">
+      <div class="container">
+        <h1 class="section-h1">Особенности</h1>
+        <section id="feature-cells">
+          <div class="feature-cell">
+            <img src="http://static-22.sinclairstoryline.com/resources/media/3ad57d90-9294-4d1c-8f95-846e7b5df925-large16x9_516234.png?1532662392251" class="feature-img">
+            <h4 class="feature-title">дизайн продукта: eames chairs</h4>
+            <p class="feature-description">Являясь всего лишь частью общей картины, предприниматели в сети интернет могут быть указаны как претенденты на роль ключевых факторов. А также реплицированные с зарубежных источников.</p>
+          </div>
+          <div class="feature-cell">
+            <img src="https://www.telegraph.co.uk/content/dam/men/2016/09/06/AERO_Bamboo_BIke_trans_NvBQzQNjv4BqQ99bcywK3ovn70OLmYu7RvcGjdxbBaRy7TzoQO1nXvA.jpg?imwidth=450" class="feature-img">
+            <h4 class="feature-title">
+элегантные и красочные логотипы</h4>
+            <p class="feature-description">PЯвляясь всего лишь частью общей картины, предприниматели в сети интернет могут быть указаны как претенденты на роль ключевых факторов. А также реплицированные с зарубежных источников.</p>
+          </div>
+          <div class="feature-cell">
+            <img src="https://static1.squarespace.com/static/5b58a5aeb27e39f7d6958e56/t/5b58e21eaa4a99812c0afe94/1532621676585/cody-hiscox-616660-unsplash.jpg?format=500w" class="feature-img">
+            <h4 class="feature-title">
+Показатель креатива</h4>
+            <p class="feature-description">Являясь всего лишь частью общей картины, предприниматели в сети интернет могут быть указаны как претенденты на роль ключевых факторов. А также реплицированные с зарубежных источников.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+    <section id="contact-section">
+      <div class="container">
+        <h1 class="section-h1">Остаемся на связи</h1>
+      </div>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d9996.607860069435!2d13.397985754356972!3d52.51523091267981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e2!4m0!4m3!3m2!1d52.5088362!2d13.3903813!5e0!3m2!1sen!2sus!4v1547804488880" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen id="map"></iframe>
+      <div class="container">
+        <section id="contact-info">
+          <h4 id="contact-info-title">контактная информация</h4>
+          <p>Некоторые особенности внутренней политики ассоциативно распределены по отраслям. Таким образом, высококачественный прототип будущего проекта способствует подготовке и реализации.</p>
+          <p>В частности, высокотехнологичная концепция общественного уклада обеспечивает широкому кругу (специалистов) участие.</p>
+        </section>
+        <div id="form-div">
+          <div id="app"><span v-bind:title="name">Здравствуйте {{ name }}!</span>
+          <form action="#" id="form">
+            <div id="name-email-inputs">
+              <div class="single-input">
+                <label for="name">Ваше имя</label>
+                <input type="text" id="name" name="name" v-model="name">
+              </div>
+              <div class="single-input">
+                <label for="email">Ваше эл. почта</label>
+                <input type="email" id="email" name="email">
+              </div>
+            </div>
+            <div id="message-and-submit">
+              <div id="textarea">
+                <label for="textarea">Ваше сообщение</label>
+                <textarea form="form" name="textarea" id="textarea" rows="6"></textarea>
+              </div>
+              <input type="submit" value="SEND MESSAGE" id="submit-btn" v-on:click.once="showsent=!showsent"><span v-show="showsent">{{ sent }}</span>
+            </div>
+          </form></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <div id="footer">
+        <p id="feature-description">&copy; Не в курсе что здесь пишут 2019. Все права защищены.</p>
+        <section id="last-links-section">
+          <a href="#" class="last-social-link"><img src="https://www.uspca.com/wp-content/uploads/facebook-logo-png-white-i6.png"></a>
+              <a href="#" class="last-social-link"><img src="http://chittagongit.com/images/twitter-icon-white-png/twitter-icon-white-png-14.jpg"></a>
+              <a href="#" class="last-social-link"><img src="http://pngimg.com/uploads/skype/skype_PNG31.png"></a>
+              <a href="#" class="last-social-link"><img src="https://www.infounders.org/wp-content/uploads/2018/08/linkedin-logo-1.png"></a>
+              <a href="#" class="last-social-link"><img src="https://cdn.freebiesupply.com/logos/large/2x/behance-logo-png-transparent.png"></a>
+        </section>
+      </div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>
