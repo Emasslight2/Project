@@ -276,6 +276,7 @@ background:#3A454D;
 }
 .human-info:hover .human-info-links{
 opacity:1;
+padding-top:7em;
 }
 .human-photo{
 margin:0;
@@ -288,9 +289,10 @@ opacity:1;
 display:flex;
 position:absolute;
 z-index:3;
-padding-top:7em;
+padding-top:9em;
 padding-left:1.5em;
 opacity:0;
+transition:1000ms;
 }
 .human-info-links .social-link{
 margin-right:1px;
@@ -363,12 +365,12 @@ padding:0;
 font-size:5em;
 display:flex;
 justify-content:center;
-margin-bottom:0.5em;
+
 opacity:0;
 }
 .works-description{
 background:#292F36;
-padding:1.3em;
+
 opacity:0;
 }
 .single-work{
@@ -381,10 +383,12 @@ height:18em;
 .single-work:hover .works-h1{
 opacity:1;
 transition:500ms;
+margin-bottom:0.5em;
 }
 .single-work:hover .works-description{
 opacity:1;
 transition:500ms;
+padding:1.3em;
 }
 .works-links{
 text-decoration:none;
