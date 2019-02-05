@@ -32,7 +32,6 @@ body{
     display:block;
     position:relative;
     text-align:center;
-    border:1px solid black;
     color:white;
     z-index:2;
 }
@@ -48,4 +47,10 @@ body{
 }
 #header-text{
     font-size:20px;
+}
+#mouse-image{
+    position:absolute;
+    bottom:20px;
+    width:25px;
+    height:auto;
 }
