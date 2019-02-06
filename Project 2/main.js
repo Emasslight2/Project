@@ -1,6 +1,10 @@
 new Vue({
     el: '#app',
     data: {
-        showNav: false
+        displayStyle:'none',
+    },
+    methods: {
+
+      
     }
   });
