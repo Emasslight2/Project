@@ -7,12 +7,13 @@
     <body>
         <header>
             <nav>
-                    <label for="toggle-btn">
-                        <div class="burger-line"></div>
-                        <div class="burger-line"></div>
-                        <div class="burger-line"></div>
-                    </label>
                     <input type="checkbox" id="toggle-btn">
+                    <label for="toggle-btn">
+                        <div class="burger-line" id="top-burger-line"></div>
+                        <div class="burger-line" id="middle-burger-line"></div>
+                        <div class="burger-line" id="bottom-burger-line"></div>
+                    </label>
+                    
                     <section id="menu">
                         <span id="burger-menu-space"></span>
                         <a href="#">Home</a>
@@ -35,7 +36,15 @@
                 <center><img src="Mouse_scroll_ic.png" id="mouse-image"></center>
             </div>
         </header>
-        <main></main>
+        <main>
+            <section id="introduction-section">
+                <h2 class="intros">Introduction</h2>
+                <hr class="section-hr">
+                <div id="text-space"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas libero metus, venenatis sit amet diam in, ultrices egestas odio. Suspendisse posuere lobortis consectetur.
+                </p></div>
+                <div id="introduction-section-img"></div>
+            </section>
+        </main>
         <footer></footer>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

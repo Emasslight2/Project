@@ -10,7 +10,7 @@ body{
     font-family: 'Amble', sans-serif;
     margin:0;
     padding:0;
-    font-size:16px;
+    font-size:18px;
     height:300vh;
     overflow-x: hidden;
     overflow-y: scroll;
@@ -21,7 +21,7 @@ body{
     background: linear-gradient(-90deg, rgba(187,67,67,0.9) 0%, rgba(239,171,75,0.8) 100%), url(HERO.png) no-repeat center top / cover;
     width:100vw;
     height:100vh;
-    z-index:1;
+    z-index:0;
 }
 #header-text-space{
     position: absolute;
@@ -46,7 +46,8 @@ body{
     font-weight: normal;
 }
 #header-hr{
-    width:10%;
+    width:80px;
+    border-top: 2px solid #fff;
 }
 #header-text{
     font-size:20px;
@@ -74,6 +75,9 @@ label{
     cursor: pointer;
     z-index:5;
 }
+label *{
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
 .burger-line{
     display:block;
     width:100%;
@@ -83,14 +87,47 @@ label{
 #toggle-btn{
     display: none;
 }
-#toggle-btn:checked + #menu{
+#toggle-btn:checked ~ #menu{
     display:block;
+}
+#toggle-btn:checked ~ #menu > a{
+    animation-name: anchor-appear;
+    animation-duration: 2000ms;
+}
+@keyframes anchor-appear{
+    0%{
+        opacity:0;
+    }
+    100%{
+        opacity:1;
+    }
+}
+#toggle-btn:checked ~ label > #top-burger-line{
+    position: absolute;
+    background-color: black;
+    display:inline;
+    transform: rotate(45deg);
+    transition-duration: 1000ms;
+}
+#toggle-btn:checked ~ label > #middle-burger-line{
+    position: absolute;
+    background-color: black;
+    display:inline;
+    transform: rotate(-45deg);
+    transition-duration: 1000ms;
+}
+#toggle-btn:checked ~ label > #bottom-burger-line{
+    opacity:0;
+    transition-duration: 2000ms;
+}
+#toggle-btn:checked + label{
+    justify-content: center;
 }
 #menu{
     display: none;
     position: relative;
     width:200px;
-    border:1px solid black;
+    box-shadow:5px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
 }
 #burger-menu-space{
     display:block;
@@ -102,5 +139,28 @@ label{
     text-decoration: none;
     color:black;
     border-top:1px solid black;
-    padding:10px 10px 10px 30px;
+    padding:20px 10px 20px 30px;
+}
+#menu a:hover{
+    padding-left: 50px;
+    text-decoration: underline;
+    transition-duration: 500ms;
+}
+.intros{
+    text-align: center;
+    font-family: 'Big John', sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: normal;
+    line-height: 20vh;
+}
+.section-hr{
+    width:80px;
+    border-top: 2px solid #000000;
+}
+#introduction-section-img{
+    height:100vh;
+    width:100vw;
+    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url(IMG.png) no-repeat center top / cover;
+    z-index:0;
 }
