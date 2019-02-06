@@ -13,7 +13,6 @@ body{
     font-size:18px;
     height:300vh;
     overflow-x: hidden;
-    overflow-y: scroll;
 }
 #header-bg-img{
     position:relative;
@@ -61,7 +60,7 @@ body{
 nav{
     position: fixed;
     display: block;
-    z-index:3;
+    z-index:4;
 }
 label{
     position:fixed;
@@ -88,7 +87,19 @@ label *{
     display: none;
 }
 #toggle-btn:checked ~ #menu{
-    display:block;
+    display: block;
+    animation-name: menu-appear;
+    animation-duration: 2000ms;
+}
+@keyframes  menu-appear{
+    0%{
+        opacity:0;
+        transform: translateX(-40px);
+    }
+    100%{
+        opacity:1;
+        transform: translateX(0);
+    }
 }
 #toggle-btn:checked ~ #menu > a{
     animation-name: anchor-appear;
@@ -109,7 +120,7 @@ label *{
     background-color: black;
     display:inline;
     transform: rotate(45deg);
-    transition-duration: 1000ms;
+    transition-duration: 1000ms;   
 }
 #toggle-btn:checked ~ label > #middle-burger-line{
     position: absolute;
@@ -122,17 +133,20 @@ label *{
     opacity:0;
     transition-duration: 2000ms;
 }
-#toggle-btn:checked + label{
+#toggle-btn:checked ~ label{
     justify-content: center;
 }
 #menu{
     display: none;
     position: relative;
     width:200px;
+    height:100vh;
+    background: rgba(255,255,255,0.5);
     box-shadow:5px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+    z-index:4;
 }
 #burger-menu-space{
-    display:block;
+    display: block;
     width:80px;
     height:80px;
 }
@@ -149,20 +163,105 @@ label *{
     transition-duration: 500ms;
 }
 .intros{
+    position:relative;
     text-align: center;
     font-family: 'Big John', sans-serif;
     font-size: 24px;
     text-transform: uppercase;
     font-weight: normal;
-    line-height: 20vh;
+    box-sizing: border-box;
+    padding-top:8vh;
 }
 .section-hr{
     width:80px;
     border-top: 2px solid #000000;
 }
 #introduction-section-img{
+    margin:0;
+    padding:0;
     height:100vh;
     width:100vw;
-    background: linear-gradient(rgba(0, 0, 0, 0.6),rgba(0, 0, 0, 0.6)), url(IMG.png) no-repeat center top / cover;
+    background: linear-gradient(to right,rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.4)), url(IMG.png) no-repeat center top / cover;
     z-index:0;
+}
+.text-space{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: white;
+    height:40vh;
+    box-sizing: border-box;
+    padding-bottom:5vh;
+}
+.text-inner{
+    margin-top:5vh;
+    max-width:700px;
+    text-align: center;
+    line-height: 4vh;
+    font-weight: normal;
+}
+#img-btn-space{
+    width:100vw;
+    height:60vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#img-btn-space a{
+    text-decoration: none;
+    font-size: 30px;
+    letter-spacing: 1px;
+    line-height: 60px;
+    color: #ffffff;
+    font-weight: 700;
+    border: 3px solid #ffffff;
+    padding:20px 8vw 20px 8vw;
+    text-shadow: 2px 2px 4px #000000;
+}
+#img-btn-space a:hover{
+    animation-name: pure-creativity;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+    box-shadow:5px 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.3);
+}
+@keyframes pure-creativity{
+    0%{
+        color:rgba(239,171,75,1);
+        background: linear-gradient(-90deg, rgba(187,67,67,0), rgba(239,171,75,1) );
+    }
+    10%{
+        background: linear-gradient(-90deg, rgba(187,67,67,0.3), rgba(239,171,75,0.8) );
+    }
+    20%{
+        color:rgba(239,171,75,0.6);
+        background: linear-gradient(-90deg, rgba(187,67,67,0.5), rgba(239,171,75,0.6) );
+    }
+    30%{
+        background: linear-gradient(-90deg, rgba(187,67,67,0.6), rgba(239,171,75,0.3) );
+    }
+    40%{
+        background: linear-gradient(-90deg, rgba(187,67,67,0.8), rgba(239,171,75,0.1) );
+    }
+    50%{
+        color:rgba(187,67,67,0.3);
+        background: linear-gradient(-90deg, rgba(187,67,67,0.9), rgba(239,171,75,0) );
+    }
+    60%{
+        background: linear-gradient(-90deg, rgba(187,67,67,1), rgba(239,171,75,0.3) );
+    }
+    70%{
+        background: linear-gradient(-90deg, rgba(187,67,67,0.8), rgba(239,171,75,0.5) );
+    }
+    80%{
+        color:rgba(187,67,67,0.6);
+        background: linear-gradient(-90deg, rgba(187,67,67,0.6), rgba(239,171,75,0.6) );
+    }
+    90%{
+        background: linear-gradient(-90deg, rgba(187,67,67,0.3), rgba(239,171,75,0.9) );
+    }
+    100%{
+        color:rgba(239,171,75,1);
+        background: linear-gradient(-90deg, rgba(187,67,67,0), rgba(239,171,75,1) );
+    }
 }
