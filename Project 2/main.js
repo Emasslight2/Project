@@ -3,6 +3,6 @@ let app = new Vue({
     data: {
         nice:"WE've got the talent",
         niceRu:"У нас есть таланты",
-        ru:false,
+        ru:true,
     }
   });
