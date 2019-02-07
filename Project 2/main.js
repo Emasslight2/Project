@@ -1,11 +1,8 @@
-new Vue({
-    el: '#app',
+let app = new Vue({
+    el: 'header',
     data: {
-        displayStyle:'none',
-        modalVisibility:false
-    },
-    methods: {
-
-      
+        nice:"WE've got the talent",
+        niceRu:"У нас есть таланты",
+        ru:false,
     }
   });

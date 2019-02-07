@@ -2,7 +2,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
-        
+        <meta charset="UTF-8">
     </head>
     <body>
         <header>
@@ -26,10 +26,13 @@
                     </section>
                     
             </nav>
+            
             <div id="header-bg-img">
                 <div id="header-text-space">
                     <article id="header-text-group">
-                        <h1 id="header-h1-text">We've got the talent</h1>
+                        <h1 id="header-h1-text" v-if="ru" v-text="nice"></h1>
+                        <h1 id="header-h1-text" v-else="ru==false" v-text="niceRu"></h1>
+                        <button v-on:click="ru=!ru">Change</button>
                         <hr id="header-hr">
                         <p id="header-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.<br> Aenean commodo ligula eget dolor. Aenean massa.</p>
                     </article>
