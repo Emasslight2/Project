@@ -88,7 +88,9 @@
                             <button class="work-group-themes" v-on:click="filter('illustrations')">Illustrations</button>
                         </section>
                         <section>
-                            <img v-for="image in filteredImages" v-bind:key="image.id" v-bind:src="image.image">
+                            <div v-for="img in filteredImages" v-bind:key="img.id">
+                                <img v-bind:src="img.image">
+                            </div>
                         </section>
                     </article>
             </section>

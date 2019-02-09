@@ -27,9 +27,9 @@ new Vue({
     computed:{
       filteredImages: function(){
         var filter = this.currentTag;
-        return this.filter(function(image){
-          return image.tags.indexOf(filter)!==-1;
-        })
+        return this.images.filter(function(img){
+          return img.tags.indexOf(filter) !== -1;
+        });
       }
     },
     methods:{
