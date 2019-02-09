@@ -81,17 +81,20 @@
                     <hr class="section-hr">
                     <article>
                         <section id="row-of-h4">
-                            <button class="work-group-themes" v-on:click="filter('all')">All</button>
-                            <button class="work-group-themes" v-on:click="filter('branding')">Branding</button>
-                            <button class="work-group-themes" v-on:click="filter('web_design')">Web design</button>
-                            <button class="work-group-themes" v-on:click="filter('mobile_ui')">Mobile UI</button>
-                            <button class="work-group-themes" v-on:click="filter('illustrations')">Illustrations</button>
+                            <h4 class="work-group-themes" v-on:click="filter('all')">All</h4>
+                            <h4 class="work-group-themes" v-on:click="filter('branding')">Branding</h4>
+                            <h4 class="work-group-themes" v-on:click="filter('web_design')">Web design</h4>
+                            <h4 class="work-group-themes" v-on:click="filter('mobile_ui')">Mobile UI</h4>
+                            <h4 class="work-group-themes" v-on:click="filter('illustrations')">Illustrations</h4>
                         </section>
                         <section>
-                            <div v-for="img in filteredImages" v-bind:key="img.id">
-                                <img v-bind:src="img.image">
-                            </div>
+                            <transition-group name="list-complete" class="list-complete" tag="section">
+                                <div v-for="img in filteredImages" v-bind:key="img.id" class="list-complete-item">
+                                    <img class="list-complete-img" :src="img.image" :alt="img.image" />
+                                </div>
+                            </transition-group>
                         </section>
+                        <div style="height:2000px"></div>
                     </article>
             </section>
         </main>
