@@ -16,16 +16,30 @@
                     </label>
                     
                     <section id="menu">
-                        <span id="burger-menu-space"></span>
-                            <a href="#">Home</a>
-                            <a href="#">Introduction</a>
-                            <a href="#">Our works</a>
-                            <a href="#">Our clients</a>
-                            <a href="#">About us</a>
-                            <a href="#">Why choose us</a>
-                            <a href="#">Get in touch</a>
-                            <img src="RF_flag.jpg" v-on:click="ru=!ru" v-if="ru" class="flag">
-                            <img src="UK_flag.png" v-on:click="ru=!ru" v-else class="flag">
+                            <div id="burger-menu-space"></div>
+                            <div id="flag-space">
+                                <img src="RF_flag.jpg" v-on:click="ru=true" class="flag">
+                                <img src="UK_flag.png" v-on:click="ru=false" class="flag">
+                            </div>
+                            <div v-if="ru">
+                                <a href="#">Домой</a>
+                                <a href="#">Вступление</a>
+                                <a href="#">Примеры работ</a>
+                                <a href="#">Наши клиенты</a>
+                                <a href="#">О нас</a>
+                                <a href="#">Почему именно мы</a>
+                                <a href="#">Свяжитесь с нами</a>
+                            </div>
+                            <div v-else>
+                                <a href="#">Home</a>
+                                <a href="#">Introduction</a>
+                                <a href="#">Our works</a>
+                                <a href="#">Our clients</a>
+                                <a href="#">About us</a>
+                                <a href="#">Why choose us</a>
+                                <a href="#">Get in touch</a>
+                            </div>
+                            
                     </section>
                     
             </nav>
@@ -33,10 +47,13 @@
             <div id="header-bg-img">
                 <div id="header-text-space">
                     <article id="header-text-group">
-                        <h1 id="header-h1-text" v-if="ru" v-text="nice"></h1>
-                        <h1 id="header-h1-text" v-else v-text="niceRu"></h1>
+                        <h1 id="header-h1-text" v-if="ru" v-text="text_ru.header.header_h1"></h1>
+                        <h1 id="header-h1-text" v-else v-text="text_eng.header.header_h1"></h1>
                         <hr id="header-hr">
-                        <p id="header-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.<br> Aenean commodo ligula eget dolor. Aenean massa.</p>
+                        <div id="header-text-box">
+                            <p id="header-text" v-if="ru" v-text="text_ru.header.header_text"></p>
+                            <p id="header-text" v-else v-text="text_eng.header.header_text"></p>
+                        </div>
                     </article>
                 </div>
                 <center><img src="Mouse_scroll_ic.png" id="mouse-image"></center>
