@@ -15,12 +15,26 @@ new Vue({
         },
         ru:false,
         images:[
-          {image:'./images/Branding.png'},
-          {image:'./images/Branding_2.png'},
-          {image:'./images/Mobile_UI.png'},
-          {image:'./images/Web_design_2.png'},
-          {image:'./images/Illustrations.png'},
-          {image:'./images/Web_design.png'},
-        ]
+          {id: 1, image:'./images/Branding.png', tags:['all', 'branding'] },
+          {id: 2, image:'./images/Branding_2.png', tags:['all', 'branding'] },
+          {id: 3, image:'./images/Mobile_UI.png', tags:['all', 'mobile_ui'] },
+          {id: 4, image:'./images/Web_design_2.png', tags:['all', 'web_design'] },
+          {id: 5, image:'./images/Illustrations.png', tags:['all', 'illustrations'] },
+          {id: 6, image:'./images/Web_design.png', tags:['all', 'web_design'] },
+        ],
+        currentTag: 'all'
+    },
+    computed:{
+      filteredImages: function(){
+        var filter = this.currentTag;
+        return this.filter(function(image){
+          return image.tags.indexOf(filter)!==-1;
+        })
+      }
+    },
+    methods:{
+      filter: function(tag){
+        this.currentTag = tag;
+      }
     }
 });

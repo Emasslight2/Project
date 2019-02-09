@@ -81,14 +81,14 @@
                     <hr class="section-hr">
                     <article>
                         <section id="row-of-h4">
-                            <h4 class="work-group-themes">All</h4>
-                            <h4 class="work-group-themes">Branding</h4>
-                            <h4 class="work-group-themes">Web design</h4>
-                            <h4 class="work-group-themes">Mobile UI</h4>
-                            <h4 class="work-group-themes">Illustrations</h4>
+                            <button class="work-group-themes" v-on:click="filter('all')">All</button>
+                            <button class="work-group-themes" v-on:click="filter('branding')">Branding</button>
+                            <button class="work-group-themes" v-on:click="filter('web_design')">Web design</button>
+                            <button class="work-group-themes" v-on:click="filter('mobile_ui')">Mobile UI</button>
+                            <button class="work-group-themes" v-on:click="filter('illustrations')">Illustrations</button>
                         </section>
                         <section>
-                            <img v-for="image in images" v-bind:src="image.image">
+                            <img v-for="image in filteredImages" v-bind:key="image.id" v-bind:src="image.image">
                         </section>
                     </article>
             </section>
