@@ -161,6 +161,15 @@ label *{
     padding-left: 50px;
     text-decoration: underline;
     transition-duration: 500ms;
+    background: rgba(0,0,0,0.4);
+}
+.flag{
+    opacity:0.5;
+    width:100%;
+    height:10vh;
+}
+.flag:hover{
+    opacity:1;
 }
 .intros{
     position:relative;
