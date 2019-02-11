@@ -309,7 +309,7 @@ label *{
     flex-direction: row;
     flex-wrap: wrap;
     margin:auto;
-    height:auto;
+    min-height:800px;
   }
   .list-complete-item {
     transition: transform 1s;
