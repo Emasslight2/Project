@@ -61,18 +61,20 @@
         </header>
         <main>
             <section id="introduction-section">
-                <h2 class="intros">Introduction</h2>
+                <h2 class="intros" v-if="ru" v-text="text_ru.main.introduction_sec.intro"></h2>
+                <h2 class="intros" v-else v-text="text_eng.main.introduction_sec.intro"></h2>
                 <hr class="section-hr">
                 
                 <div id="introduction-section-img">
                         
                     <div class="text-space">
-                            
-                            <p class="text-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas libero metus, venenatis sit amet diam in, ultrices egestas odio. Suspendisse posuere lobortis consectetur.
-                        </p>
+                        <p class="text-inner" v-if="ru" v-text="text_ru.main.introduction_sec.text_inner"></p> 
+                        <p class="text-inner" v-else v-text="text_eng.main.introduction_sec.text_inner"></p>
                     </div>
                     <div id="img-btn-space">
-                        <a href="#">Pure Creativity.</a>
+                        <a href="#">
+                            <span v-text="text_eng.main.introduction_sec.big_btn"></span>
+                        </a>
                     </div>
                 </div>
             </section>

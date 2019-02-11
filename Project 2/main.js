@@ -5,12 +5,25 @@ new Vue({
           header:{
             header_h1:"We've got the talent",
             header_text:"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa."
+          },
+          main:{
+            introduction_sec:{
+              intro:"Introduction",
+              text_inner:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas libero metus, venenatis sit amet diam in, ultrices egestas odio. Suspendisse posuere lobortis consectetur.",
+              big_btn:"Pure Creativity."
+            }
           }
         },
         text_ru:{
           header:{
             header_h1:"У нас есть таланты",
             header_text:"Идейные соображения высшего порядка, а также постоянный количественный рост. Место обучения кадров влечет за собой процесс внедрения."
+          },
+          main:{
+            introduction_sec:{
+              intro:"Вступление",
+              text_inner:"Повседневная практика показывает, что дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание новых предложений. Систем массового участия."
+            }
           }
         },
         ru:false,
