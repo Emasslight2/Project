@@ -11,6 +11,16 @@ new Vue({
               intro:"Introduction",
               text_inner:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas libero metus, venenatis sit amet diam in, ultrices egestas odio. Suspendisse posuere lobortis consectetur.",
               big_btn:"Pure Creativity."
+            },
+            work_sec:{
+              tags:{
+                all:'all',
+                branding:'branding',
+                web_design:'web design',
+                mobile_ui:'mobile ui',
+                illustrations:'illustrations'
+              },
+              tagsArr:['all']
             }
           }
         },
@@ -28,19 +38,19 @@ new Vue({
         },
         ru:false,
         images:[
-          {id: 1, image:'./images/Branding.png', tags:['all', 'branding'] },
-          {id: 2, image:'./images/Branding_2.png', tags:['all', 'branding'] },
-          {id: 3, image:'./images/Mobile_UI.png', tags:['all', 'mobile_ui'] },
-          {id: 4, image:'./images/Web_design_2.png', tags:['all', 'web_design'] },
-          {id: 5, image:'./images/Illustrations.png', tags:['all', 'illustrations'] },
-          {id: 6, image:'./images/Web_design.png', tags:['all', 'web_design'] },
-          {id: 7, image:'Creative_b.jpg', tags:['all', 'branding'] },
-          {id: 8, image:'ADK_brand.png', tags:['all', 'branding'] },
-          {id: 9, image:'Blackberry_desing.png', tags:['all', 'illustrations'] },
-          {id: 10, image:'consulting_mobile.jpg', tags:['all', 'mobile_ui'] },
-          {id: 11, image:'phone.png', tags:['all', 'mobile_ui'] },
-          {id: 12, image:'alamy_phone.jpg', tags:['all', 'mobile_ui'] },
-          {id: 13, image:'web.png', tags:['all', 'web_design'] },
+          {id: 1, image:'./images/Branding.png', tags:['all', 'branding'], name:'branding', text:"Restaurants" },
+          {id: 2, image:'./images/Branding_2.png', tags:['all', 'branding'], name:'branding', text:"Ocean's beaches" },
+          {id: 3, image:'./images/Mobile_UI.png', tags:['all', 'mobile_ui'], name:'mobile ui', text:"Google Mail" },
+          {id: 4, image:'./images/Web_design_2.png', tags:['all', 'web_design'], name:'web wesign', text:"Portico" },
+          {id: 5, image:'./images/Illustrations.png', tags:['all', 'illustrations'], name:'illustrations', text:"SMASH bros" },
+          {id: 6, image:'./images/Web_design.png', tags:['all', 'web_design'], name:'web wesign', text:"SALT" },
+          {id: 7, image:'Creative_b.jpg', tags:['all', 'branding'], name:'branding', text:"Cofe pubs" },
+          {id: 8, image:'ADK_brand.png', tags:['all', 'branding'], name:'branding', text:"ADK Consulting" },
+          {id: 9, image:'Blackberry_desing.png', tags:['all', 'illustrations'], name:'illustrations', text:"Design Guidelines" },
+          {id: 10, image:'consulting_mobile.jpg', tags:['all', 'mobile_ui'], name:'mobile ui', text:"ANDER" },
+          {id: 11, image:'phone.png', tags:['all', 'mobile_ui'], name:'mobile ui', text:"boniad" },
+          {id: 12, image:'alamy_phone.jpg', tags:['all', 'mobile_ui'], name:'mobile ui', text:"alamy" },
+          {id: 13, image:'web.png', tags:['all', 'web_design'], name:'web wesign', text:"Envoy" },
         ],
         currentTag: 'all'
     },

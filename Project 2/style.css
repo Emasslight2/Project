@@ -286,6 +286,12 @@ label *{
         background: linear-gradient(-90deg, rgba(187,67,67,0), rgba(239,171,75,1) );
     }
 }
+.centrate{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 #row-of-h4{
     margin:60px 0 60px 0;
     display: flex;
@@ -301,12 +307,17 @@ label *{
     margin:0 10px 0 10px;
     cursor: pointer;
 }
+.clickedTag{
+    font-weight: bold;
+}
 
 
 .list-complete {
     display: flex;
     width: 80%;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     margin:auto;
     min-height:800px;
@@ -317,10 +328,49 @@ label *{
     padding:0;
     width:360px;
     height:auto;
+    min-height: 200px;
+    max-height:400px;
     z-index:2;
     overflow: hidden;
+    position: relative;
   /*   display: inline-block;
     margin-right: 10px; */
+  }
+  .img-text-space{
+    position: absolute;
+    width:100%;
+    height:50%;
+    top:0;
+    left:0;
+    background:rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    opacity: 0;
+    color:white;
+  }
+  .img-name{
+    font-family: "Big John";
+    text-transform: uppercase;
+    font-weight: normal;
+    opacity:0;
+    margin:0;
+    padding:0;
+  }
+  .img-hr{
+      width:10%;
+      border:none;
+      border-top: 2px solid #D87843;
+  }
+  .list-complete-item:hover .img-text-space{
+      opacity: 1;
+      height: 100%;
+  }
+  .list-complete-item:hover .img-name{
+      opacity:1;
   }
   .list-complete-img {
     height: auto;
@@ -335,3 +385,42 @@ label *{
   .list-complete-leave-active {
     position: absolute;
   }
+
+#show-me-more-btn{
+    color:black;
+    font-weight: bold;
+    text-decoration: none;
+    border:2px solid black;
+    font-size: 24px;
+    letter-spacing: 1px;
+    padding:10px 85px 10px 85px;
+    margin:50px 0 50px 0;
+}
+#show-me-more-btn:hover{
+    animation: btn-borders;
+    animation-duration: 1000ms;
+    animation-iteration-count: infinite;
+}
+@keyframes btn-borders{
+    0%{
+        border-color: black;
+        transform: scale(1);
+    }
+    30%{
+        border-color:white;
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    60%{
+        border-color:white;
+    }
+    100%{
+        border-color:black;
+    }
+}
+@media (max-width:1060px){
+    .list-complete{
+        width:100vw;
+    }
+}
