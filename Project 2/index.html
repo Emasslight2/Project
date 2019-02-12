@@ -32,7 +32,7 @@
                             </div>
                             <div v-else>
                                 <a href="#">Home</a>
-                                <a href="#">Introduction</a>
+                                <a href="#introduction-section">Introduction</a>
                                 <a href="#">Our works</a>
                                 <a href="#">Our clients</a>
                                 <a href="#">About us</a>
@@ -61,36 +61,71 @@
         </header>
         <main>
             <section id="introduction-section">
-                <h2 class="intros">Introduction</h2>
+                <h2 class="intros" v-if="ru" v-text="text_ru.main.introduction_sec.intro"></h2>
+                <h2 class="intros" v-else v-text="text_eng.main.introduction_sec.intro"></h2>
                 <hr class="section-hr">
                 
                 <div id="introduction-section-img">
                         
                     <div class="text-space">
-                            
-                            <p class="text-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas libero metus, venenatis sit amet diam in, ultrices egestas odio. Suspendisse posuere lobortis consectetur.
-                        </p>
+                        <p class="text-inner" v-if="ru" v-text="text_ru.main.introduction_sec.text_inner"></p> 
+                        <p class="text-inner" v-else v-text="text_eng.main.introduction_sec.text_inner"></p>
                     </div>
                     <div id="img-btn-space">
-                        <a href="#">Pure Creativity.</a>
+                        <a href="#">
+                            <span v-text="text_eng.main.introduction_sec.big_btn"></span>
+                        </a>
                     </div>
                 </div>
             </section>
             <section id="some-of-our-work">
                     <h2 class="intros">Some of our work</h2>
                     <hr class="section-hr">
-                    <article>
+                    <article class="centrate">
                         <section id="row-of-h4">
-                            <h4 class="work-group-themes">All</h4>
-                            <h4 class="work-group-themes">Branding</h4>
-                            <h4 class="work-group-themes">Web design</h4>
-                            <h4 class="work-group-themes">Mobile UI</h4>
-                            <h4 class="work-group-themes">Illustrations</h4>
+                            <h4 class="work-group-themes" v-on:click="filter('all')" v-text="text_eng.main.work_sec.tags.all" v-bind:class="{clickedTag: currentTag=='all'}"></h4>
+                            <h4 class="work-group-themes" v-on:click="filter('branding')" v-text="text_eng.main.work_sec.tags.branding" v-bind:class="{clickedTag: currentTag=='branding'}"></h4>
+                            <h4 class="work-group-themes" v-on:click="filter('web_design')" v-text="text_eng.main.work_sec.tags.web_design" v-bind:class="{clickedTag: currentTag=='web_design'}"></h4>
+                            <h4 class="work-group-themes" v-on:click="filter('mobile_ui')" v-text="text_eng.main.work_sec.tags.mobile_ui" v-bind:class="{clickedTag: currentTag=='mobile_ui'}"></h4>
+                            <h4 class="work-group-themes" v-on:click="filter('illustrations')" v-text="text_eng.main.work_sec.tags.illustrations" v-bind:class="{clickedTag: currentTag=='illustrations'}"></h4>
                         </section>
-                        <section>
-                            <img v-for="image in images" v-bind:src="image.image">
+                        <section >
+                            <transition-group name="list-complete" class="list-complete" tag="section">
+                                <div v-for="img in filteredImages" v-bind:key="img.id" class="list-complete-item">
+                                    <a href="#"><img class="list-complete-img" :src="img.image" :alt="img.image" />
+                                    <div v-for="index in 1" class="img-text-space">
+                                        <h4 v-text="img.name" class="img-name"></h4> 
+                                        <p v-text="img.text"></p>
+                                        <hr class="img-hr">
+                                    </div></a>
+                                </div>
+                            </transition-group>
+                            
                         </section>
+                        <a href=# id="show-me-more-btn">Show me more</a>
                     </article>
+            </section>
+            <section id="our-clients">
+                <section class="half-section">
+                    <div id="space-img">
+                        <div id="words-borders">
+                            <span href="#" class="words">We're here to help</span>
+                            <span href="#" class="words">To help everyone</span>
+                            <span href="#" class="words">And everybody</span>
+                        </div>
+                    </div>
+                </section>
+                <section class="half-section">
+                    <h2 class="intros">Our clients</h2>
+                    <hr class="section-hr">
+                    <div id="logos-space">
+                        <img src="./logos/google.png">
+                        <img src="./logos/samsung.png">
+                        <img src="./logos/flickr.png">
+                        <img src="./logos/foursquare.png">
+                        <img src="./logos/pinterest.png">
+                    </div>
+                </section>
             </section>
         </main>
         <footer></footer>
