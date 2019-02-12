@@ -20,7 +20,6 @@ new Vue({
                 mobile_ui:'mobile ui',
                 illustrations:'illustrations'
               },
-              tagsArr:['all']
             }
           }
         },
@@ -44,13 +43,13 @@ new Vue({
           {id: 4, image:'./images/Web_design_2.png', tags:['all', 'web_design'], name:'web wesign', text:"Portico" },
           {id: 5, image:'./images/Illustrations.png', tags:['all', 'illustrations'], name:'illustrations', text:"SMASH bros" },
           {id: 6, image:'./images/Web_design.png', tags:['all', 'web_design'], name:'web wesign', text:"SALT" },
-          {id: 7, image:'Creative_b.jpg', tags:['all', 'branding'], name:'branding', text:"Cofe pubs" },
-          {id: 8, image:'ADK_brand.png', tags:['all', 'branding'], name:'branding', text:"ADK Consulting" },
-          {id: 9, image:'Blackberry_desing.png', tags:['all', 'illustrations'], name:'illustrations', text:"Design Guidelines" },
-          {id: 10, image:'consulting_mobile.jpg', tags:['all', 'mobile_ui'], name:'mobile ui', text:"ANDER" },
-          {id: 11, image:'phone.png', tags:['all', 'mobile_ui'], name:'mobile ui', text:"boniad" },
-          {id: 12, image:'alamy_phone.jpg', tags:['all', 'mobile_ui'], name:'mobile ui', text:"alamy" },
-          {id: 13, image:'web.png', tags:['all', 'web_design'], name:'web wesign', text:"Envoy" },
+          {id: 7, image:'./images/Creative_b.jpg', tags:['all', 'branding'], name:'branding', text:"Cofe pubs" },
+          {id: 8, image:'./images/ADK_brand.png', tags:['all', 'branding'], name:'branding', text:"ADK Consulting" },
+          {id: 9, image:'./images/Blackberry_desing.png', tags:['all', 'illustrations'], name:'illustrations', text:"Design Guidelines" },
+          {id: 10, image:'./images/consulting_mobile.jpg', tags:['all', 'mobile_ui'], name:'mobile ui', text:"ANDER" },
+          {id: 11, image:'./images/phone.png', tags:['all', 'mobile_ui'], name:'mobile ui', text:"boniad" },
+          {id: 12, image:'./images/alamy_phone.jpg', tags:['all', 'mobile_ui'], name:'mobile ui', text:"alamy" },
+          {id: 13, image:'./images/web.png', tags:['all', 'web_design'], name:'web wesign', text:"Envoy" },
         ],
         currentTag: 'all'
     },
