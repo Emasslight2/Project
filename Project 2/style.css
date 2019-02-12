@@ -6,6 +6,9 @@
     font-family: 'Big John';
     src: url(fonts/BIG_JOHN.otf);
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     font-family: 'Amble', sans-serif;
     margin:0;
