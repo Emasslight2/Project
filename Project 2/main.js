@@ -51,7 +51,8 @@ new Vue({
           {id: 12, image:'./images/alamy_phone.jpg', tags:['all', 'mobile_ui'], name:'mobile ui', text:"alamy" },
           {id: 13, image:'./images/web.png', tags:['all', 'web_design'], name:'web wesign', text:"Envoy" },
         ],
-        currentTag: 'all'
+        currentTag: 'all',
+        applyVisibility:false,
     },
     computed:{
       filteredImages: function(){

@@ -9,7 +9,7 @@
         <header>
             <nav>
                     <input type="checkbox" id="toggle-btn">
-                    <label for="toggle-btn">
+                    <label id="nav-label" for="toggle-btn">
                         <div class="burger-line" id="top-burger-line"></div>
                         <div class="burger-line" id="middle-burger-line"></div>
                         <div class="burger-line" id="bottom-burger-line"></div>
@@ -119,11 +119,90 @@
                     <h2 class="intros">Our clients</h2>
                     <hr class="section-hr">
                     <div id="logos-space">
-                        <img src="./logos/google.png">
-                        <img src="./logos/samsung.png">
-                        <img src="./logos/flickr.png">
-                        <img src="./logos/foursquare.png">
-                        <img src="./logos/pinterest.png">
+                        <img src="./logos/google.png" class="logos-img">
+                        <img src="./logos/samsung.png" class="logos-img">
+                        <img src="./logos/flickr.png" class="logos-img">
+                        <img src="./logos/foursquare.png" class="logos-img">
+                        <img src="./logos/pinterest.png" class="logos-img">
+                    </div>
+                </section>
+            </section>
+            <section id="about-us">
+                <section>
+                    <h2 class="intros">About us</h2>
+                    <hr class="section-hr">
+                    <center>
+                        <p class="text-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa non ex consectetur interdum et vitae lacus. Cras congue massa eget dolor consequat tincidunt. Donec sit amet pulvinar felis.</p> 
+                    </center>
+                </section>
+                <section id="team">
+                    <div class="member">
+                        <div id="John-photo" class="member-photo">
+                            <a href="#"><img src="symbol.png" title="get in touch" class="link-img"></a>
+                            <center>
+                            <div class="human-info">
+                                <h5 class="human-name">John</h5>
+                                <p class="human-text">CEO/Founder</p>
+                            </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div id="Selena-photo" class="member-photo">
+                            <a href="#"><img src="symbol.png" title="get in touch" class="link-img"></a>
+                            <center>
+                            <div class="human-info">
+                                <h5 class="human-name">Selena</h5>
+                                <p class="human-text">Head of Development</p>
+                            </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="member">
+                        <div id="Maria-photo" class="member-photo">
+                            <a href="#"><img src="symbol.png" title="get in touch" class="link-img"></a>
+                            <center>
+                            <div class="human-info">
+                                <h5 class="human-name">Maria</h5>
+                                <p class="human-text">Client Service director</p>
+                            </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="member" id="we-are-hiring" v-if="applyVisibility==false">
+                        <h2 class="intros" style="margin:30px;padding:0;">We are hiring</h2>
+                        <hr class="section-hr" style="margin:30px;padding:0;">
+                        <span id="apply-btn" v-on:click="applyVisibility=true">Apply</span>
+                    </div>
+                    <div class="member" id="hiring-form" v-if="applyVisibility">
+                        <button id="close-btn" v-on:click="applyVisibility=false">Close</button>
+                        <form method="POST">
+                            <div class="personal-info">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="personal-info">
+                                <label for="surname">Surname</label>
+                                <input type="text" id="surname" name="surname" required>
+                            </div>
+                            <div class="personal-info">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="personal-info">
+                                <label for="speciality">Speciality</label>
+                                <select id="speciality" name="speciality" required>
+                                    <option value="computer_science">Computer Science</option>
+                                    <option value="software_engineering">Software Engineering</option>
+                                    <option value="web_development">Web Development</option>
+                                    <option value="public_relations">Public Relations</option>
+                                    <option value="graphic_design">Graphic Design</option>
+                                </select>
+                            </div>
+                            <textarea placeholder="Write why you choose our organization..." cols="30" rows="6" required></textarea>
+                            <input type="submit" id="apply-btn">
+                            <p>We will contact you in four days</p>
+                        </form>
                     </div>
                 </section>
             </section>
