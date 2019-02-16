@@ -3,6 +3,8 @@
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Casablanca</title>
     </head>
     <body>
         <div id="app">
@@ -89,7 +91,7 @@
                             <h4 class="work-group-themes" v-on:click="filter('mobile_ui')" v-text="text_eng.main.work_sec.tags.mobile_ui" v-bind:class="{clickedTag: currentTag=='mobile_ui'}"></h4>
                             <h4 class="work-group-themes" v-on:click="filter('illustrations')" v-text="text_eng.main.work_sec.tags.illustrations" v-bind:class="{clickedTag: currentTag=='illustrations'}"></h4>
                         </section>
-                        <section >
+                        
                             <transition-group name="list-complete" class="list-complete" tag="section">
                                 <div v-for="img in filteredImages" v-bind:key="img.id" class="list-complete-item">
                                     <a href="#"><img class="list-complete-img" :src="img.image" :alt="img.image" />
@@ -101,7 +103,7 @@
                                 </div>
                             </transition-group>
                             
-                        </section>
+                        
                         <a href=# id="show-me-more-btn">Show me more</a>
                     </article>
             </section>
@@ -201,9 +203,63 @@
                             </div>
                             <textarea placeholder="Write why you choose our organization..." cols="30" rows="6" required></textarea>
                             <input type="submit" id="apply-btn">
-                            <p>We will contact you in four days</p>
                         </form>
                     </div>
+                </section>
+            </section>
+            <section id="video-sec">
+                <section class="v-class video-container" id="video-back">
+                    <div class="fullscreen-video-wrap">
+                        <video v-bind:src="videoSource" 
+                        autoplay loop muted></video>
+                        <div class="video-overlay"></div>
+                        <div class="video-content">
+                            <img src="playIcon.png" alt="playIcon.png" id="playIcon" v-on:click="videoShow=true">
+                        </div>
+                    </div>
+                </section>
+                <aside id="video-click" v-if="videoShow">
+                    <div id="video-control">
+                        <center>
+                        <video v-bind:src="videoSource" 
+                        controls></video>
+                        </center>
+                    </div>
+                    <center>
+                    <button id="close-video-btn" v-on:click="videoShow=false">CLOSE</button>
+                    </center>
+                </aside>
+            </section>
+            <section id="why-choose-us">
+                <section>
+                    <h2 class="intros">Why choose us</h2>
+                    <hr class="section-hr">
+                    <center>
+                        <p class="text-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa non ex consectetur interdum et vitae lacus. Cras congue massa eget dolor consequat tincidunt. Donec sit amet pulvinar felis.</p> 
+                    </center>
+                </section>
+                <section>
+                    <!--for-slider-->
+                </section>
+            </section>
+            <section id="get-a-quote">
+                <div id="qouteImg">
+                    <a href="#" class="white-btn">Get a quote now</a>
+                </div>
+            </section>
+            <section id="get-in-touch-sec">
+                <section>
+                    <h2 class="intros">get in touch</h2>
+                    <hr class="section-hr">
+                    <center>
+                        <p class="text-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa non ex consectetur interdum et vitae lacus. Cras congue massa eget dolor consequat tincidunt. Donec sit amet pulvinar felis.</p> 
+                    </center>
+                </section>
+                <section id="info-and-form">
+                    <aside id="location-info">
+                        <h6 class="h6-caps">Our location</h6>
+                    </aside>
+                    <form id="contact-form">nice2</form>
                 </section>
             </section>
         </main>

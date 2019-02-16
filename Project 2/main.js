@@ -53,6 +53,8 @@ new Vue({
         ],
         currentTag: 'all',
         applyVisibility:false,
+        videoSource:'https://production.cdmycdn.com/assets/marketing-pages/intensives/bws/coding-scenes-9a2031e8142b40bdb5d936d5eef33dfa.mp4',
+        videoShow:false,
     },
     computed:{
       filteredImages: function(){
@@ -65,6 +67,6 @@ new Vue({
     methods:{
       filter: function(tag){
         this.currentTag = tag;
-      }
+      },
     }
 });

@@ -11,14 +11,14 @@ body{
     margin:0;
     padding:0;
     font-size:18px;
-    height:300vh;
-    overflow-x: hidden;
+    width:100vw;
+    max-width: 100%;
 }
 #header-bg-img{
     position:relative;
     display:block;
     background: linear-gradient(-90deg, rgba(187,67,67,0.9) 0%, rgba(239,171,75,0.8) 100%), url(HERO.png) no-repeat center top / cover;
-    width:100vw;
+
     height:100vh;
     z-index:0;
 }
@@ -201,7 +201,6 @@ nav{
     margin:0;
     padding:0;
     height:100vh;
-    width:100vw;
     background: linear-gradient(to right,rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.4)), url(IMG.png) no-repeat center top / cover;
     z-index:0;
 }
@@ -223,7 +222,6 @@ nav{
     font-weight: normal;
 }
 #img-btn-space{
-    width:100vw;
     height:60vh;
     display:flex;
     align-items: center;
@@ -518,6 +516,8 @@ nav{
     flex-direction: column;
 }
 #team{
+    width:100vw;
+    max-width:100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -529,6 +529,8 @@ nav{
     position: relative;
     width:250px;
     height:350px;
+    max-width: 100%;
+    max-height: 100%;
     color:white;
     margin:10px 10px 10px 10px
 }
@@ -630,7 +632,7 @@ nav{
     cursor: pointer;
 }
 #hiring-form{
-    box-sizing: border-box;
+
     border:1px solid black;
     color:black;
 }
@@ -665,8 +667,138 @@ nav{
     background: black;
     color:white;
 }
+
+#video-sec{
+    position: relative;
+}
+#video-back{
+    margin-top:50px;
+    box-sizing: border-box;
+    position: relative;
+    height: 50vh;
+    overflow: hidden;
+}
+.v-class{
+    height:100vh;
+    display: flex;
+    align-items: center;
+}
+.video-conteiner{
+    max-width: 960px;
+    margin:auto;
+    text-align: center;
+}
+.fullscreen-video-wrap{
+    position: absolute center;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.fullscreen-video-wrap video{
+    min-width: 100%;
+    min-height: 100%;
+}
+.video-overlay{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top:0;
+    left:0;
+    background: #000000;
+    z-index:1;
+    opacity: 0.5;
+}
+.video-content{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:2;
+    width:100%;
+    height:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#playIcon{
+    opacity:0.5;
+}
+#playIcon:hover{
+    opacity:1;
+}
+#video-click{
+    background: rgba(0,0,0,0.7);
+    width:100vw;
+    height: 100vh;
+    position: fixed;
+    top:0;
+    z-index:5;
+}
+#video-control{
+    width:auto;
+    height:90%;
+}
+#close-video-btn{
+    position: absolute;
+    bottom: 0;
+    border:none;
+    background: #000000;
+    font-size: 30px;
+    font-weight: bold;
+    color:#fff;
+}
+
+#get-a-quote{
+    display: block;
+    height:50vh;
+    overflow: hidden;
+    background: rgba(0,0,0,0.5);
+}
+#qouteImg{
+    background: url(quoteImg.png) center;
+    height:100%;
+    width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.white-btn{
+    text-decoration: none;
+    color:white;
+    font-size: 30px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    border:2px solid #ffffff;
+    padding:20px 60px 20px 60px;
+    transition: 300ms;
+}
+.white-btn:hover{
+    transform: scale(1.1);
+    box-shadow: 0px 0px 50px #000000;
+}
+
+#info-and-form{
+    display: grid;
+    grid-template-areas: "info-location form";
+    grid-template-columns: 1fr 2fr;
+    border:1px solid green;
+}
+#location-info{
+    grid-area: info-location;
+    background: brown;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+#contact-form{
+    grid-area: form;
+    background: red;
+}
+.h6-caps{
+    
+}
 @media (max-width:1060px){
     .list-complete{
         width:100vw;
+        max-width: 100%
     }
 }
