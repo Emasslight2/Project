@@ -68,5 +68,20 @@ new Vue({
       filter: function(tag){
         this.currentTag = tag;
       },
+      leftBtn: function(){
+        this.scrollToStart();
+      },
+      rightBtn: function(){
+        this.scrollToEnd();
+      },
+      scrollToStart:function(){
+        var container = this.$el.querySelector("#slider");
+        container.scrollRight=container.scroll(0,0);
+      },
+      scrollToEnd: function(){
+        var container = this.$el.querySelector("#slider");
+        container.scrollLeft=container.scrollWidth;
+      },
+      
     }
 });

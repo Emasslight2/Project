@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=0.7">
         <title>Casablanca</title>
     </head>
     <body>
@@ -238,7 +238,70 @@
                         <p class="text-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa non ex consectetur interdum et vitae lacus. Cras congue massa eget dolor consequat tincidunt. Donec sit amet pulvinar felis.</p> 
                     </center>
                 </section>
-                <section>
+                <section id="slider-sec">
+                    <div id="slider-wrap">
+                        <div id="slider-btns">
+                            <button  class="slider-btn" id="leftBtn" v-on:click="leftBtn()"></button>
+                            <button  class="slider-btn" id="rightBtn" v-on:click="rightBtn()"></button>
+                        </div>
+                        <div id="slider">
+                            <div class="slide" id="slide-1">
+                                <div class="slide-img-cntr">
+                                    <img src="./slider/smartphone.png" class="slide-img">
+                                </div>
+                                <div>
+                                    <h6 class="slide-h6">App Design</h6>
+                                    <p class="slide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="slide" id="slide-2">
+                                <div class="slide-img-cntr">
+                                    <img src="./slider/pad.png" class="slide-img">
+                                </div>
+                                <div>
+                                    <h6 class="slide-h6">Responsive Layout</h6>
+                                    <p class="slide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="slide" id="slide-3">
+                                <div class="slide-img-cntr">
+                                    <img src="./slider/laptop.png" class="slide-img">
+                                </div>
+                                <div>
+                                    <h6 class="slide-h6">Pixel Perfect Design</h6>
+                                    <p class="slide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="slide" id="slide-4">
+                                <div class="slide-img-cntr">
+                                    <img src="./slider/laptop.png" class="slide-img">
+                                </div>
+                                <div>
+                                    <h6 class="slide-h6">App Design</h6>
+                                    <p class="slide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="slide" id="slide-5">
+                                <div class="slide-img-cntr">
+                                    <img src="./slider/pad.png" class="slide-img">
+                                </div>
+                                <div>
+                                    <h6 class="slide-h6">Responsive Layout</h6>
+                                    <p class="slide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="slide" id="slide-6">
+                                <div class="slide-img-cntr">
+                                    <img src="./slider/smartphone.png" class="slide-img">
+                                </div>
+                                <div>
+                                    <h6 class="slide-h6">Pixel Perfect Design</h6>
+                                    <p class="slide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
                     <!--for-slider-->
                 </section>
             </section>
