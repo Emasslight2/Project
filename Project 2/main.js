@@ -55,6 +55,14 @@ new Vue({
         applyVisibility:false,
         videoSource:'https://production.cdmycdn.com/assets/marketing-pages/intensives/bws/coding-scenes-9a2031e8142b40bdb5d936d5eef33dfa.mp4',
         videoShow:false,
+        features:[
+          {id: 1, image:'./slider/smartphone.png', name:'App Design', text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet." },
+          {id: 2, image:'./slider/pad.png', name:'Responsive Layout', text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet." },
+          {id: 3, image:'./slider/laptop.png', name:'Pixel Perfect Design', text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet." },
+          {id: 4, image:'./slider/laptop.png', name:'Pixel Perfect Design', text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet." },
+          {id: 5, image:'./slider/pad.png', name:'Responsive Layout', text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet." },
+          {id: 6, image:'./slider/smartphone.png', name:'App Design', text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet." }
+        ]
     },
     computed:{
       filteredImages: function(){

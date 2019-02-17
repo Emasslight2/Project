@@ -836,6 +836,7 @@ nav{
     height:100%;
     display: flex;
     overflow-x: auto;
+    scroll-behavior: smooth;
 }
 .slide{
     box-sizing: border-box;
