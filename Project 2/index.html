@@ -245,64 +245,18 @@
                             <button  class="slider-btn" id="rightBtn" v-on:click="rightBtn()"></button>
                         </div>
                         <div id="slider">
-                            <div class="slide" id="slide-1">
+                            <div v-for="feature in features" v-bind:key="feature.id" class="slide">
                                 <div class="slide-img-cntr">
-                                    <img src="./slider/smartphone.png" class="slide-img">
+                                    <img :src="feature.image" class="slide-img">
                                 </div>
                                 <div>
-                                    <h6 class="slide-h6">App Design</h6>
-                                    <p class="slide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet.</p>
-                                </div>
-                            </div>
-                            <div class="slide" id="slide-2">
-                                <div class="slide-img-cntr">
-                                    <img src="./slider/pad.png" class="slide-img">
-                                </div>
-                                <div>
-                                    <h6 class="slide-h6">Responsive Layout</h6>
-                                    <p class="slide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet.</p>
-                                </div>
-                            </div>
-                            <div class="slide" id="slide-3">
-                                <div class="slide-img-cntr">
-                                    <img src="./slider/laptop.png" class="slide-img">
-                                </div>
-                                <div>
-                                    <h6 class="slide-h6">Pixel Perfect Design</h6>
-                                    <p class="slide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet.</p>
-                                </div>
-                            </div>
-                            <div class="slide" id="slide-4">
-                                <div class="slide-img-cntr">
-                                    <img src="./slider/laptop.png" class="slide-img">
-                                </div>
-                                <div>
-                                    <h6 class="slide-h6">App Design</h6>
-                                    <p class="slide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet.</p>
-                                </div>
-                            </div>
-                            <div class="slide" id="slide-5">
-                                <div class="slide-img-cntr">
-                                    <img src="./slider/pad.png" class="slide-img">
-                                </div>
-                                <div>
-                                    <h6 class="slide-h6">Responsive Layout</h6>
-                                    <p class="slide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet.</p>
-                                </div>
-                            </div>
-                            <div class="slide" id="slide-6">
-                                <div class="slide-img-cntr">
-                                    <img src="./slider/smartphone.png" class="slide-img">
-                                </div>
-                                <div>
-                                    <h6 class="slide-h6">Pixel Perfect Design</h6>
-                                    <p class="slide-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa. Lorem ipsum dolor sit amet.</p>
+                                    <h6 class="slide-h6" v-text="feature.name"></h6>
+                                    <p class="slide-text" v-text="feature.text"></p>
                                 </div>
                             </div>
                         </div>
                         
                     </div>
-                    <!--for-slider-->
                 </section>
             </section>
             <section id="get-a-quote">

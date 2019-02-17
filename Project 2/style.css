@@ -6,6 +6,9 @@
     font-family: 'Big John';
     src: url(fonts/BIG_JOHN.otf);
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     font-family: 'Amble', sans-serif;
     margin:0;
@@ -13,6 +16,7 @@ body{
     font-size:18px;
     width:100vw;
     max-width: 100%;
+    
 }
 #header-bg-img{
     position:relative;
