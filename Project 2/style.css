@@ -388,6 +388,7 @@ nav{
   }
 
 #show-me-more-btn{
+    display: block;
     color:black;
     font-weight: bold;
     text-decoration: none;
@@ -396,6 +397,7 @@ nav{
     letter-spacing: 1px;
     padding:10px 85px 10px 85px;
     margin:50px 0 50px 0;
+
 }
 #show-me-more-btn:hover{
     animation: btn-borders;
@@ -443,7 +445,7 @@ nav{
 #words-borders{
     position: relative;
     display: block;
-    width:400px;
+    width:450px;
     min-height:80px;
     display: flex;
     align-items: center;
@@ -453,6 +455,7 @@ nav{
 }
 .words{
     position: absolute;
+    bottom:30%;
     opacity:1;
     font-size: 30px;
     letter-spacing: 1px;
@@ -636,7 +639,8 @@ nav{
     cursor: pointer;
 }
 #hiring-form{
-
+    padding:5px;
+    width:auto;
     border:1px solid black;
     color:black;
 }
@@ -739,7 +743,11 @@ nav{
 }
 #video-control{
     width:auto;
-    height:90%;
+    height:auto;
+}
+#video-control video{
+    width:80%;
+    height:auto;
 }
 #close-video-btn{
     position: absolute;
@@ -809,6 +817,7 @@ nav{
     border:none;
     margin:0 10px 0 10px;
     transition: 500ms;
+    outline: none;
 }
 .slider-btn:hover{
     background: #D87943;
@@ -872,10 +881,14 @@ nav{
 }
 
 #info-and-form{
+    margin-top:10vh;
     display: grid;
-    grid-template-areas: "info-location form";
+    grid-template-areas: "info-location form"
+                            "info-location form";
     grid-template-columns: 1fr 2fr;
     height:auto;
+    width: 100vw;
+    max-width: 100%;
 }
 #location-info{
     grid-area: info-location;
@@ -884,10 +897,7 @@ nav{
     align-items:center;
     justify-content: center;
     flex-direction: column;
-}
-#contact-form{
-    grid-area: form;
-    background: #E4E4E4;
+    width: 100%;
 }
 #info-cntr{
     margin:15vh 0 15vh 0;
@@ -913,15 +923,153 @@ nav{
 }
 
 
-
-
-
+#contact-form{
+    grid-area: form;
+    background: #E4E4E4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+}
+#form-cntr{
+    width: 80%;
+    height:auto;
+}
+#inputs-cntr{
+    width:100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.form-input-div{
+    width: 100%;
+    max-width: 100%;
+    margin:0;
+    padding: 0;
+}
+.form-inputs{
+    box-sizing: border-box;
+    margin:0;
+    padding: 0;
+    background: #E4E4E4;
+    border:none;
+    outline: none;
+    border-bottom: 1px solid grey;
+    font-style: italic;
+    font-size: 18px;
+    line-height: 40px;
+    color: #676767;
+    font-family: "Amble";
+    font-weight: 400;
+    width:100%;
+    max-width: 100%;
+    padding-left:20px;
+}
+.name-email-inputs-div{
+    width:45% !important;
+}
 #form-textarea{
+    margin-top:15vh;
+    line-height: 30px;
+    display: block;
     height: auto;
+    overflow-y: hidden;
+    resize: none;
+    width:100%;
+    max-width: 100%;
+}
+#send-cntr{
+    margin-top:5vh;
+    display: flex;
+    justify-content: flex-end;
+}
+#send-btn{
+    border: 3px solid #222222;
+    background: none;
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: 1px;
+    padding:15px 50px 15px 50px;
+    cursor: pointer;
+    transition: 500ms;
+}
+#send-btn:hover{
+    background: #222222;
+    color:#E4E4E4;
+}
+
+
+footer{
+    background-color: #222222;
+    display: flex;
+    align-items: center;
+    height: 40vh;
+}
+#footer-cntr{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#footer-logo-div{
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+#footer-logo-div img{
+    width: 380px;
+    max-width: 100%;
+}
+#footer-copyright-div{
+    text-align: center;
+}
+#copyright{
+    margin-top:50px;
+    color: #e4e4e4;
+    font-size: 16px;
+}
+#copyright a{
+    text-decoration: none;
+    color:rgba(239,171,75,0.8);
+}
+#copyright a:hover{
+    color:rgba(239,171,75,1);
 }
 @media (max-width:1060px){
     .list-complete{
         width:100vw;
         max-width: 100%
+    }
+}
+@media (max-width:880px){
+    #info-and-form{
+        grid-template-areas: 
+                            "info-location info-location" 
+                            "form form";
+        grid-template-rows: 1fr 1fr;
+    }
+}
+@media (max-width:550px){
+    #inputs-cntr{
+        flex-direction: column;
+    }
+    .name-email-inputs-div{
+        width:100% !important;
+        margin-bottom:20px;
+    }
+}
+@media (max-width:480px){
+    .logos-img{
+        margin:0 10px 0 10px;
+    }
+    .intros{
+        padding-top:2vh;
+    }
+}
+@media (max-width: 320px){
+    #show-me-more-btn{
+        padding:10px;
+
     }
 }
