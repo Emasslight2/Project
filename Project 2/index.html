@@ -3,7 +3,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Casablanca</title>
     </head>
     <body>
@@ -25,21 +25,21 @@
                             </div>
                             <div v-if="ru">
                                 <a href="#">Домой</a>
-                                <a href="#">Вступление</a>
-                                <a href="#">Примеры работ</a>
-                                <a href="#">Наши клиенты</a>
-                                <a href="#">О нас</a>
-                                <a href="#">Почему именно мы</a>
-                                <a href="#">Свяжитесь с нами</a>
+                                <a href="#introduction-section">Вступление</a>
+                                <a href="#some-of-our-work">Примеры работ</a>
+                                <a href="#our-clients">Наши клиенты</a>
+                                <a href="#about-us">О нас</a>
+                                <a href="#why-choose-us">Почему именно мы</a>
+                                <a href="#get-in-touch-sec">Свяжитесь с нами</a>
                             </div>
                             <div v-else>
                                 <a href="#">Home</a>
                                 <a href="#introduction-section">Introduction</a>
                                 <a href="#some-of-our-work">Our works</a>
                                 <a href="#our-clients">Our clients</a>
-                                <a href="#">About us</a>
-                                <a href="#">Why choose us</a>
-                                <a href="#">Get in touch</a>
+                                <a href="#about-us">About us</a>
+                                <a href="#why-choose-us">Why choose us</a>
+                                <a href="#get-in-touch-sec">Get in touch</a>
                             </div>
                             
                     </section>
@@ -75,16 +75,25 @@
                     </div>
                     <div id="img-btn-space">
                         <a href="#">
-                            <span v-text="text_eng.main.introduction_sec.big_btn"></span>
+                            <span v-if="ru "v-text="text_ru.main.introduction_sec.big_btn"></span>
+                            <span v-else v-text="text_eng.main.introduction_sec.big_btn"></span>
                         </a>
                     </div>
                 </div>
             </section>
             <section id="some-of-our-work">
-                    <h2 class="intros">Some of our work</h2>
+                    <h2 class="intros" v-if="ru" v-text="text_ru.main.work_sec.intro"></h2>
+                    <h2 class="intros" v-else v-text="text_eng.main.work_sec.intro"></h2>
                     <hr class="section-hr">
                     <article class="centrate">
-                        <section id="row-of-h4">
+                        <section id="row-of-h4" v-if="ru">
+                            <h4 class="work-group-themes" v-on:click="filter('all')" v-text="text_ru.main.work_sec.tags.all" v-bind:class="{clickedTag: currentTag=='all'}"></h4>
+                            <h4 class="work-group-themes" v-on:click="filter('branding')" v-text="text_ru.main.work_sec.tags.branding" v-bind:class="{clickedTag: currentTag=='branding'}"></h4>
+                            <h4 class="work-group-themes" v-on:click="filter('web_design')" v-text="text_ru.main.work_sec.tags.web_design" v-bind:class="{clickedTag: currentTag=='web_design'}"></h4>
+                            <h4 class="work-group-themes" v-on:click="filter('mobile_ui')" v-text="text_ru.main.work_sec.tags.mobile_ui" v-bind:class="{clickedTag: currentTag=='mobile_ui'}"></h4>
+                            <h4 class="work-group-themes" v-on:click="filter('illustrations')" v-text="text_ru.main.work_sec.tags.illustrations" v-bind:class="{clickedTag: currentTag=='illustrations'}"></h4>
+                        </section>
+                        <section id="row-of-h4" v-else>
                             <h4 class="work-group-themes" v-on:click="filter('all')" v-text="text_eng.main.work_sec.tags.all" v-bind:class="{clickedTag: currentTag=='all'}"></h4>
                             <h4 class="work-group-themes" v-on:click="filter('branding')" v-text="text_eng.main.work_sec.tags.branding" v-bind:class="{clickedTag: currentTag=='branding'}"></h4>
                             <h4 class="work-group-themes" v-on:click="filter('web_design')" v-text="text_eng.main.work_sec.tags.web_design" v-bind:class="{clickedTag: currentTag=='web_design'}"></h4>
@@ -96,45 +105,56 @@
                                 <div v-for="img in filteredImages" v-bind:key="img.id" class="list-complete-item">
                                     <a href="#"><img class="list-complete-img" :src="img.image" :alt="img.image" />
                                     <div v-for="index in 1" class="img-text-space">
-                                        <h4 v-text="img.name" class="img-name"></h4> 
-                                        <p v-text="img.text"></p>
+                                        <h4 v-if="ru" v-text="img.name_ru" class="img-name"></h4> 
+                                        <h4 v-else v-text="img.name_eng" class="img-name"></h4> 
+                                        <p v-if="ru" v-text="img.text_ru"></p>
+                                        <p v-else v-text="img.text_eng"></p>
                                         <hr class="img-hr">
                                     </div></a>
                                 </div>
                             </transition-group>
                             
                         
-                        <a href=# id="show-me-more-btn">Show me more</a>
+                        <a href=# id="show-me-more-btn" v-if="ru" v-text="text_ru.main.work_sec.btn"></a>
+                        <a href=# id="show-me-more-btn" v-else v-text="text_eng.main.work_sec.btn"></a>
                     </article>
             </section>
             <section id="our-clients">
                 <section class="half-section">
                     <div id="space-img">
-                        <div id="words-borders">
-                            <span href="#" class="words">We're here to help</span>
-                            <span href="#" class="words">To help everyone</span>
-                            <span href="#" class="words">And everybody</span>
+                        <div id="words-borders" v-if="ru">
+                            <span class="words">Мы здесь чтобы помочь</span>
+                            <span class="words">Помочь всем</span>
+                            <span class="words">И каждому</span>
+                        </div>
+                        <div id="words-borders" v-else>
+                            <span class="words">We're here to help</span>
+                            <span class="words">To help everyone</span>
+                            <span class="words">And everybody</span>
                         </div>
                     </div>
                 </section>
                 <section class="half-section">
-                    <h2 class="intros">Our clients</h2>
+                    <h2 class="intros" v-if="ru" v-text="text_ru.main.clients_sec.intro">Our clients</h2>
+                    <h2 class="intros" v-else v-text="text_eng.main.clients_sec.intro">Our clients</h2>
                     <hr class="section-hr">
                     <div id="logos-space">
-                        <img src="./logos/google.png" class="logos-img">
-                        <img src="./logos/samsung.png" class="logos-img">
-                        <img src="./logos/flickr.png" class="logos-img">
-                        <img src="./logos/foursquare.png" class="logos-img">
-                        <img src="./logos/pinterest.png" class="logos-img">
+                        <a href="https://www.google.com/" target="_blank"><img src="./logos/google.png" class="logos-img"></a>
+                        <a href="https://www.samsung.com/countryselection/" target="_blank"><img src="./logos/samsung.png" class="logos-img"></a>
+                        <a href="https://www.flickr.com/" target="_blank"><img src="./logos/flickr.png" class="logos-img"></a>
+                        <a href="https://foursquare.com/" target="_blank"><img src="./logos/foursquare.png" class="logos-img"></a>
+                        <a href="https://www.pinterest.com/" target="_blank"><img src="./logos/pinterest.png" class="logos-img"></a>
                     </div>
                 </section>
             </section>
             <section id="about-us">
                 <section>
-                    <h2 class="intros">About us</h2>
+                    <h2 class="intros" v-if="ru" v-text="text_ru.main.about_us.intro"></h2>
+                    <h2 class="intros" v-else v-text="text_eng.main.about_us.intro"></h2>
                     <hr class="section-hr">
                     <center>
-                        <p class="text-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa non ex consectetur interdum et vitae lacus. Cras congue massa eget dolor consequat tincidunt. Donec sit amet pulvinar felis.</p> 
+                        <p class="text-inner" v-if="ru" v-text="text_ru.main.about_us.text"></p> 
+                        <p class="text-inner" v-else v-text="text_eng.main.about_us.text"></p> 
                     </center>
                 </section>
                 <section id="team">
@@ -142,7 +162,11 @@
                         <div id="John-photo" class="member-photo">
                             <a href="#"><img src="symbol.png" title="get in touch" class="link-img"></a>
                             <center>
-                            <div class="human-info">
+                            <div class="human-info" v-if="ru">
+                                <h5 class="human-name">Джон</h5>
+                                <p class="human-text">Ген. директор/Основатель</p>
+                            </div>
+                            <div class="human-info" v-else>
                                 <h5 class="human-name">John</h5>
                                 <p class="human-text">CEO/Founder</p>
                             </div>
@@ -153,7 +177,11 @@
                         <div id="Selena-photo" class="member-photo">
                             <a href="#"><img src="symbol.png" title="get in touch" class="link-img"></a>
                             <center>
-                            <div class="human-info">
+                            <div class="human-info" v-if="ru">
+                                <h5 class="human-name">Селена</h5>
+                                <p class="human-text">Глава Развития</p>
+                            </div>
+                            <div class="human-info" v-else>
                                 <h5 class="human-name">Selena</h5>
                                 <p class="human-text">Head of Development</p>
                             </div>
@@ -164,7 +192,11 @@
                         <div id="Maria-photo" class="member-photo">
                             <a href="#"><img src="symbol.png" title="get in touch" class="link-img"></a>
                             <center>
-                            <div class="human-info">
+                            <div class="human-info" v-if="ru">
+                                <h5 class="human-name">Мария</h5>
+                                <p class="human-text">Директор по обслуживанию клиентов</p>
+                            </div>
+                            <div class="human-info" v-else>
                                 <h5 class="human-name">Maria</h5>
                                 <p class="human-text">Client Service director</p>
                             </div>
@@ -172,13 +204,42 @@
                         </div>
                     </div>
                     <div class="member" id="we-are-hiring" v-if="applyVisibility==false">
-                        <h2 class="intros" style="margin:30px;padding:0;">We are hiring</h2>
+                        <h2 class="intros" style="margin:30px;padding:0;" v-if="ru">Мы нанимаем!</h2>
+                        <h2 class="intros" style="margin:30px;padding:0;" v-else>We are hiring</h2>
                         <hr class="section-hr" style="margin:30px;padding:0;">
-                        <span id="apply-btn" v-on:click="applyVisibility=true">Apply</span>
+                        <span id="apply-btn" v-on:click="applyVisibility=true" v-if="ru">Подать</span>
+                        <span id="apply-btn" v-on:click="applyVisibility=true" v-else>Apply</span>
                     </div>
                     <div class="member" id="hiring-form" v-if="applyVisibility">
-                        <button id="close-btn" v-on:click="applyVisibility=false">Close</button>
-                        <form method="POST">
+                        <button id="close-btn" v-on:click="applyVisibility=false" v-if="ru">Закрыть</button>
+                        <button id="close-btn" v-on:click="applyVisibility=false" v-else>Close</button>
+                        <form method="POST" v-if="ru">
+                            <div class="personal-info">
+                                <label for="name">Имя</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="personal-info">
+                                <label for="surname">Фамилия</label>
+                                <input type="text" id="surname" name="surname" required>
+                            </div>
+                            <div class="personal-info">
+                                <label for="email">Эл. почта</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="personal-info">
+                                <label for="speciality">Специальность</label>
+                                <select id="speciality" name="speciality" required>
+                                    <option value="computer_science">Информатика</option>
+                                    <option value="software_engineering">Программная Инженерия</option>
+                                    <option value="web_development">Веб-разработка</option>
+                                    <option value="public_relations">PR</option>
+                                    <option value="graphic_design">Графический дизайн</option>
+                                </select>
+                            </div>
+                            <textarea placeholder="Напишите почему вы выбрали именно нас..." cols="30" rows="6" required></textarea>
+                            <input type="submit" id="apply-btn">
+                        </form>
+                        <form method="POST" v-else>
                             <div class="personal-info">
                                 <label for="name">Name</label>
                                 <input type="text" id="name" name="name" required>
@@ -226,44 +287,124 @@
                         </center>
                     </div>
                     <center>
-                    <button id="close-video-btn" v-on:click="videoShow=false">CLOSE</button>
+                    <button id="close-video-btn" v-on:click="videoShow=false" v-if="ru">ЗАКРЫТЬ</button>
+                    <button id="close-video-btn" v-on:click="videoShow=false" v-else>CLOSE</button>
                     </center>
                 </aside>
             </section>
             <section id="why-choose-us">
                 <section>
-                    <h2 class="intros">Why choose us</h2>
+                    <h2 class="intros" v-if="ru" v-text="text_ru.main.why_choose_us.intro"></h2>
+                    <h2 class="intros" v-else v-text="text_eng.main.why_choose_us.intro"></h2>
                     <hr class="section-hr">
                     <center>
-                        <p class="text-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa non ex consectetur interdum et vitae lacus. Cras congue massa eget dolor consequat tincidunt. Donec sit amet pulvinar felis.</p> 
+                        <p class="text-inner" v-if="ru" v-text="text_ru.main.why_choose_us.text"></p> 
+                        <p class="text-inner" v-else v-text="text_eng.main.why_choose_us.text"></p> 
                     </center>
                 </section>
-                <section>
-                    <!--for-slider-->
+                <section id="slider-sec">
+                    <div id="slider-wrap">
+                        <div id="slider-btns">
+                            <button  class="slider-btn" id="leftBtn" v-on:click="leftBtn()"></button>
+                            <button  class="slider-btn" id="rightBtn" v-on:click="rightBtn()"></button>
+                        </div>
+                        <div id="slider">
+                            <div v-for="feature in features" v-bind:key="feature.id" class="slide">
+                                <div class="slide-img-cntr">
+                                    <img :src="feature.image" class="slide-img">
+                                </div>
+                                <div>
+                                    <h6 class="slide-h6" v-if="ru" v-text="feature.name_ru"></h6>
+                                    <h6 class="slide-h6" v-else v-text="feature.name_eng"></h6>
+                                    <p class="slide-text" v-if="ru" v-text="feature.text_ru"></p>
+                                    <p class="slide-text" v-else v-text="feature.text_eng"></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
                 </section>
             </section>
             <section id="get-a-quote">
                 <div id="qouteImg">
-                    <a href="#" class="white-btn">Get a quote now</a>
+                    <a href="#" class="white-btn" v-if="ru">Получить совет прямо сейчас</a>
+                    <a href="#" class="white-btn" v-else>Get a quote now</a>
                 </div>
             </section>
             <section id="get-in-touch-sec">
                 <section>
-                    <h2 class="intros">get in touch</h2>
+                    <h2 class="intros" v-if="ru" v-text="text_ru.main.get_in_touch.intro"></h2>
+                    <h2 class="intros" v-else v-text="text_eng.main.get_in_touch.intro"></h2>
                     <hr class="section-hr">
                     <center>
-                        <p class="text-inner">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sit amet massa non ex consectetur interdum et vitae lacus. Cras congue massa eget dolor consequat tincidunt. Donec sit amet pulvinar felis.</p> 
+                        <p class="text-inner" v-if="ru" v-text="text_ru.main.get_in_touch.text"></p> 
+                        <p class="text-inner" v-else v-text="text_eng.main.get_in_touch.text"></p> 
                     </center>
                 </section>
                 <section id="info-and-form">
                     <aside id="location-info">
-                        <h6 class="h6-caps">Our location</h6>
+                        <div id="info-cntr">
+                            <h6 class="h6-caps" v-if="ru">Наше местоположение</h6>
+                            <h6 class="h6-caps" v-else>Our location</h6>
+                            <div id="info-text-group" v-if="ru">
+                                <span class="info-text"><i>174 Мимоза ST NW</i></span>
+                                <span class="info-text"><i>Касабланка, MA 20370</i></span>
+                                <span class="info-text"><i>(212) 123 456 7</i></span>
+                                <span class="info-text"><i>Самир Тимезгайда</i></span>
+                            </div>
+                            <div id="info-text-group" v-else>
+                                <span class="info-text"><i>174 Mimosa ST NW</i></span>
+                                <span class="info-text"><i>Casablanca, MA 20370</i></span>
+                                <span class="info-text"><i>(212) 123 456 7</i></span>
+                                <span class="info-text"><i>Samir Timezguida</i></span>
+                            </div>
+                            <div id="social-media-group">
+                                <a href="https://twitter.com/" target="_blank"><img src="./socialMedia/twitter.png"></a>
+                                <a href="https://www.facebook.com/" target="_blank"><img src="./socialMedia/facebook.png"></a>
+                                <a href="https://www.linkedin.com/" target="_blank"><img src="./socialMedia/linkedin.png"></a>
+                                <a href="https://vimeo.com/" target="_blank"><img src="./socialMedia/vimeo.png"></a>
+                                <a href="https://www.behance.net/" target="_blank"><img src="./socialMedia/behance.png"></a>
+                            </div>
+                        </div>
                     </aside>
-                    <form id="contact-form">nice2</form>
+                    <form id="contact-form" method="POST">
+                        <div id="form-cntr">
+                            <div id="inputs-cntr">
+                                <div class="form-input-div name-email-inputs-div">
+                                    <label for="name"></label>
+                                    <input type="text" id="name" name="name" required placeholder="Имя" v-if="ru" class="form-inputs">
+                                    <input type="text" id="name" name="name" required placeholder="Name" v-else class="form-inputs">
+                                </div>
+                                <div class="form-input-div name-email-inputs-div">
+                                    <label for="email"></label>
+                                    <input type="email" id="email" name="email" required placeholder="Эл. почта" v-if="ru" class="form-inputs">
+                                    <input type="email" id="email" name="email" required placeholder="Email" v-else class="form-inputs">
+                                </div>
+                                <div class="form-input-div">
+                                    <textarea placeholder="Сообщение" required id="form-textarea" v-if="ru" class="form-inputs" @input="textareaResize" ref="textarea" rows="1"></textarea>
+                                    <textarea placeholder="Message" required id="form-textarea" v-else class="form-inputs" @input="textareaResize" ref="textarea" rows="1"></textarea>
+                                </div>
+                            </div>
+                            <div id="send-cntr">
+                                <input type="submit" value="Отправить" id="send-btn" v-if="ru">
+                                <input type="submit" value="Send" id="send-btn" v-else>
+                            </div>
+                        </div>
+                    </form>
                 </section>
             </section>
         </main>
-        <footer></footer>
+        <footer>
+            <div id="footer-cntr">
+                <div id="footer-logo-div">
+                    <img src="footer-logo.png">
+                </div>
+                <div id="footer-copyright-div">
+                    <p id="copyright" v-if="ru">2014 &copy; <a href="#">Самир Тимезгайда.</a> Все права сохранены</p>
+                    <p id="copyright" v-else>2014 &copy; <a href="#">Samir Timezguida.</a> All right Reserved</p>
+                </div>
+            </div>
+        </footer>
         </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
